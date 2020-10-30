@@ -10,10 +10,7 @@ const ColorList = ({ colors, updateColors }) => {
   console.log(colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
-  const [newColor, setNewColor] = useState({
-    color: '',
-    code: { hex: '' }
-  })
+  const [newColor, setNewColor] = useState(initialColor)
 
   const editColor = color => {
     setEditing(true);
@@ -65,10 +62,7 @@ const ColorList = ({ colors, updateColors }) => {
     .then(response => {
       console.log('newColor post', response)
       updateColors()
-      setNewColor({
-        color: '',
-        code: { hex: '' }
-      })
+      setNewColor(initialColor)
     })
     .catch(error => {
       console.log('newColor Error', error)
@@ -76,7 +70,9 @@ const ColorList = ({ colors, updateColors }) => {
   };
 
   return (
-    <div className="colors-wrap">
+    <div
+      style={{height:"100%"}} 
+      className="colors-wrap">
       <p>colors</p>
       <ul>
         {colors.map(color => (
@@ -132,21 +128,25 @@ const ColorList = ({ colors, updateColors }) => {
       {/* stretch - build another form here to add a color */}
       <p>Add color</p>
       <form onSubmit={handleColorSubmit}>
-        <input 
+        <input style={{alignSelf:"center"}}
         type='text'
         name='color'
         placeholder='Color Name'
         value={newColor.color}
         onChange={handleColorChange}
         />
-        <input 
+        <input style={{alignSelf:"center"}}
         type='text'
         name='hex'
         placeholder='Color Hex'
         value={newColor.code.hex}
         onChange={handleHexChange}
         />
-        <button type='submit'>Add</button>
+        <button
+          style={{width:"50px", alignSelf:"center"}}
+          type='submit'>
+            Add
+        </button>
       </form>
     </div>
   );

@@ -4,8 +4,6 @@ import axios from 'axios';
 const Login = (props) => {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
-  
-  // username: 'Lambda School', password: 'i<3Lambd4'
   const [login, setLogin] = useState({ username: '', password: '' });
 
   const handleChange = event => {
@@ -26,26 +24,31 @@ const Login = (props) => {
   };
 
   return (
-    <>
+    <div style={{display:"flex", flexDirection: "column", alignContent:"center"}}>
       <h1>Welcome to the Bubble App!</h1>
       <form onSubmit={handleSubmit}>
-        <input 
+        <input style={{width:"50%", alignSelf:"center"}}
         type='text'
         name='username'
-        placeholder='Username'
+        placeholder='username'
         value={login.username}
         onChange={handleChange}
         />
-        <input 
+        <input style={{width:"50%", alignSelf:"center"}}
         type='password'
         name='password'
-        placeholder='Password'
+        placeholder='password'
         value={login.password}
         onChange={handleChange}
         />
-        <button type='submit'>Sign In</button>
+        <button 
+          style={{width:"50%", alignSelf:"center"}}
+          type='submit'>
+            Sign In
+        </button>
       </form>
-    </>
+      <p>Hint: Write in the placeholder text for entry.</p>
+    </div>
   );
 };
 
