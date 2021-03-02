@@ -19,7 +19,7 @@ const Login = (props) => {
       localStorage.setItem('token', response.data.payload);
       props.history.push('/bubble-page')
     })
-    .catch(error => {console.log('Login Error', error)
+      .catch(error => {console.log('Login Error', error)
     })
   };
 
@@ -28,18 +28,18 @@ const Login = (props) => {
       <h1>Welcome to the Bubble App!</h1>
       <form onSubmit={handleSubmit}>
         <input style={{width:"50%", alignSelf:"center"}}
-        type='text'
-        name='username'
-        placeholder='username'
-        value={login.username}
-        onChange={handleChange}
+          type='text'
+          name='username'
+          placeholder='username'
+          value={login.username}
+          onChange={handleChange}
         />
         <input style={{width:"50%", alignSelf:"center"}}
-        type='password'
-        name='password'
-        placeholder='password'
-        value={login.password}
-        onChange={handleChange}
+          type='password'
+          name='password'
+          placeholder='password'
+          value={login.password}
+          onChange={handleChange}
         />
         <button 
           style={{width:"50%", alignSelf:"center"}}

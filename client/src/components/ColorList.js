@@ -129,18 +129,18 @@ const ColorList = ({ colors, updateColors }) => {
       <p>Add color</p>
       <form onSubmit={handleColorSubmit}>
         <input style={{alignSelf:"center"}}
-        type='text'
-        name='color'
-        placeholder='Color Name'
-        value={newColor.color}
-        onChange={handleColorChange}
+          type='text'
+          name='color'
+          placeholder='Color Name'
+          value={newColor.color}
+          onChange={handleColorChange}
         />
         <input style={{alignSelf:"center"}}
-        type='text'
-        name='hex'
-        placeholder='Color Hex'
-        value={newColor.code.hex}
-        onChange={handleHexChange}
+          type='text'
+          name='hex'
+          placeholder='Color Hex'
+          value={newColor.code.hex}
+          onChange={handleHexChange}
         />
         <button
           style={{width:"50px", alignSelf:"center"}}
